@@ -1,0 +1,6 @@
+# Ignore video file types requested
+*.mp4
+*.avi
+
+# Note: .gitignore cannot ignore files based on size (e.g., >70 MB).
+# To prevent committing large files consider using Git LFS or a pre-commit hook.
