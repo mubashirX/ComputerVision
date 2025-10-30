@@ -29,7 +29,7 @@ class_names = [
 ]
 
 # 🔸 Convert to RGB to fix the error
-img = Image.open("Test_Image.jpg").convert("RGB")
+img = Image.open("test_pics.jpg").convert("RGB")
 img = transform(img).unsqueeze(0)
 
 with torch.no_grad():
