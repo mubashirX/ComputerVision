@@ -73,18 +73,23 @@ print("\nEach detection contains 6 values:")
 print("  [x1, y1, x2, y2, confidence, class_id]")
 print("="*60)
 
+
 # Get detections from batch
 detections = output0[0]  # Shape: (300, 6)
 
+
 print("\nProcessing detections...")
 print("Total predictions:", len(detections))
+
 
 # Filter by confidence threshold
 CONFIDENCE_THRESHOLD = 0.70
 valid_detections = detections[detections[:, 4] > CONFIDENCE_THRESHOLD]
 
-print("Detections above threshold (0.5):", len(valid_detections))
+print("Detections above threshold (0.70):", len(valid_detections))
 print("")
+
+
 
 # Display each valid detection
 for i, det in enumerate(valid_detections):
@@ -95,6 +100,8 @@ for i, det in enumerate(valid_detections):
     print("  Confidence:", round(float(conf), 4))
     print("  Bbox (resized image):", int(x1), int(y1), int(x2), int(y2))
     print("")
+
+
 
 # Draw on image
 img_with_boxes = img.copy()
